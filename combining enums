@@ -1,16 +1,13 @@
 enum PrimeIcons { 
-    pens, 
-    cakes,
-    coffee
+    CIRCLE_TIMES = "pi pi-circle-times", 
+    TRASH = "pi pi-trash",
 }
 
-enum SvgIcons { 
-    price1,
-    price2,
-    price3
+enum FontAwesomeIcons { 
+    ACORN = "fad fa-acorn",
 }
 
 let icons = Object.assign({}, SvgIcons, PrimeIcons);
 
-icons.cakes;
-icons.price1
+icons.TRASH;
+icons.ACORN;
