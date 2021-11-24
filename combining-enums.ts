@@ -7,7 +7,7 @@ enum FontAwesomeIcons {
     ACORN = "fad fa-acorn",
 }
 
-let icons = Object.assign({}, SvgIcons, PrimeIcons);
+let icons = Object.assign({}, FontAwesomeIcons, PrimeIcons);
 
 icons.TRASH;
 icons.ACORN;
