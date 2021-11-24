@@ -13,3 +13,4 @@ enum SvgIcons {
 let icons = Object.assign({}, SvgIcons, PrimeIcons);
 
 icons.cakes;
+icons.price1
