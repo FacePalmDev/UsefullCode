@@ -1,0 +1,15 @@
+enum PrimeIcons { 
+    pens, 
+    cakes,
+    coffee
+}
+
+enum SvgIcons { 
+    price1,
+    price2,
+    price3
+}
+
+let icons = Object.assign({}, SvgIcons, PrimeIcons);
+
+icons.cakes;
