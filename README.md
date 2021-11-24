@@ -1,2 +1,2 @@
-# UsefullCode
+# UsefulCode
 Useful things. 🎁
