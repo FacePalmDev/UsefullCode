@@ -29,3 +29,9 @@ function getElementSelector(elem) {
 
   return `${getElementSelector(parentNode)} > ${str}`;
 }
+
+document.addEventListener('click', function(e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement;  
+    console.log(getElementSelector(target));
+}, false);
