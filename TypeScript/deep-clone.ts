@@ -13,7 +13,7 @@ export class DeepClonable extends Object implements IDeepClonable {
     this.#obj = objectToClone;
   }
 
-  deepClone(): object {
+  public deepClone(): object {
     const item = this as Record<string, any>;
     const clone = { ...item };
     const keys = Object.keys(item);
