@@ -2,25 +2,24 @@
 One approach is to use JSON.parse(JSON.stringify(thing), but this is not performant and frankly it's ewwww... 
 The code below offers a better solution to this problem. */
 
-export interface IDeepClonable {
-  deepClone(): object;
+export interface IDeepClonable<T> {
+  deepClone(): T;
 }
-export class DeepClonable extends Object implements IDeepClonable {
+
+export class DeepCloner<T> extends Object implements IDeepClonable<T> {
   #obj: Record<string, any>;
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  constructor(objectToClone: any) {
+  constructor(private subject: T) {
     super();
-    this.#obj = objectToClone;
   }
 
-  public deepClone(): object {
-    const item = this as Record<string, any>;
-    const clone = { ...item };
-    const keys = Object.keys(item);
+  public deepClone(): T {
+    const clone = { ...this.subject };
+    const keys = Object.keys(this.subject);
     for (const key of keys) {
-      const property = item[key];
+      const property = this.subject[key];
       clone[key] = property instanceof Object ? { ...property } : property;
     }
-    return clone;
+    return clone as unknown as T;
   }
 }
