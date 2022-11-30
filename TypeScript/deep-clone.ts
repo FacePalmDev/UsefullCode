@@ -7,14 +7,12 @@ interface IClonable {
 }
 
 (Object.prototype as any).clone = function (): Record<string, any> {
-  const item = this as Record<string, any>
+  const item = this as Record<string, any>;
   const clone = { ...item };
-  //? item
   const keys = Object.keys(item);
   for (const key of keys) {
     const property = item[key];
     clone[key] = property instanceof Object ? { ...property } : property;
   }
   return clone;
-}
-
+};
