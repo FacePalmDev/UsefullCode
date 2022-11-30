@@ -2,12 +2,7 @@
 One approach is to use JSON.parse(JSON.stringify(thing), but this is not performant and frankly it's ewwww... 
 The code below offers a better solution to this problem. */
 
-export interface IDeepClonable<T> {
-  deepClone(): T;
-}
-
-export class DeepCloner<T> extends Object implements IDeepClonable<T> {
-  #obj: Record<string, any>;
+export class DeepCloner<T> extends Object {
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   constructor(private subject: T) {
     super();
@@ -23,3 +18,4 @@ export class DeepCloner<T> extends Object implements IDeepClonable<T> {
     return clone as unknown as T;
   }
 }
+
