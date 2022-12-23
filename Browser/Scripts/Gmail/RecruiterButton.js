@@ -32,9 +32,10 @@ init = () => {
         firstName = firstArr.join('');
 
         const available = '<enter availability here e.g. "in August">';
+        const workplace = "Nasa";
         const message = `Hey ${firstName},
               
-              Sorry for the rushed response! I'm currently working for NATO, but I'll be available in August; I'll let you know if anything changes.
+              Sorry for the rushed response! I'm currently working for ${workplace}, but I'll be available in August; I'll let you know if anything changes.
 
               In the meantime, if we're not already connected on LinkedIn, please feel free to add me:
               https://www.linkedin.com/in/simplifycomplexity/
